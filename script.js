@@ -14,22 +14,22 @@ const songs = [
     {
         name: 'jacinto-1',
         displayName: 'Electric chill machine',
-        artistName: 'IoJu Design',
+        artistName: 'Jacinto Design',
     },
     {
         name: 'jacinto-2',
         displayName: 'Seven Nation Army (Remix)',
-        artistName: 'IoJu Design',
+        artistName: 'Jacinto Design',
     },
     {
         name: 'jacinto-3',
         displayName: 'Electric chill machine',
-        artistName: 'IoJu Design',
+        artistName: 'Jacinto Design',
     },
     {
         name: 'metric-1',
         displayName: 'Electric chill machine 2',
-        artistName: 'IoJu Design',
+        artistName: 'Jacinto Design',
     },
 ]
 
@@ -143,6 +143,11 @@ prevBtn.addEventListener('click', () => {
 
 music.addEventListener('loadedmetadata', setDuration);
 music.addEventListener('timeupdate', updateProgressBar);
+music.addEventListener('ended', () => {
+    nextBtn.click();
+    playSong();
+});
 progressContainer.addEventListener('click', setProgressBar);
+
 
 loadSong(songs[currentSongIndex]);
